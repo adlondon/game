@@ -2,11 +2,14 @@ var start = alert("Are You Ready? Click OK to begin");
 var age = prompt("How old are you?");
 if (age >= 21) {
   console.log("User is old enough");
+  var riverPrompt = function() {
   var river = prompt(
-    "Good enough for me. Now you are walking down a road and you come to a river that you need to cross. There is a bridge going over it. Do you want to A) 'swim across the river' or B) 'walk across the bridge'?'"
+    "You are walking down a road and you come to a river that you need to cross. There is a bridge going over it. Do you want to A) 'swim across the river' or B) 'walk across the bridge'?'"
   );
+  console.log(river);
   if (river.toLowerCase() === "a" || river.toLowerCase() === "swim across the river") {
     console.log("User will swim");
+    var wetsuitPrompt = function() {
     var wetsuit = prompt(
       "That's a bold move. The water could be chilly. Did you bring your wetsuit?"
     )
@@ -36,22 +39,17 @@ if (age >= 21) {
       alert(
         "You'll freeze to death! Swimming is not a viable option. Let's try the bridge."
       );
-      // !!!!!!!!!!!!!FIGURE OUT HOW TO LOOP TO BEGINING
-      // !!!!!!!!!!!!!FIGURE OUT HOW TO LOOP TO BEGINING
-      // !!!!!!!!!!!!!FIGURE OUT HOW TO LOOP TO BEGINING
-      // !!!!!!!!!!!!!FIGURE OUT HOW TO LOOP TO BEGINING
+      riverPrompt();
     } else {
       console.log("User entry invalid");
-      alert("You need to answer yes or no. Let's try this again.")
-        // !!!!!!!!FIGURE OUT HOW TO REPEAT QUESTION
-        // !!!!!!!!FIGURE OUT HOW TO REPEAT QUESTION
-        // !!!!!!!!FIGURE OUT HOW TO REPEAT QUESTION
-        // !!!!!!!!FIGURE OUT HOW TO REPEAT QUESTION
-        // !!!!!!!!FIGURE OUT HOW TO REPEAT QUESTION
-        // !!!!!!!!FIGURE OUT HOW TO REPEAT QUESTION
+      alert("You need to answer yes or no. Let's try this again.");
+      wetsuitPrompt()
     }
+  }
+  wetsuitPrompt();
   } else if (river.toLowerCase() === "b" || river.toLowerCase() === "walk across the bridge") {
     console.log("User will walk across bridge");
+    var footwearPrompt = function (){
     var footwear = prompt(
       "It's a long walk to the end. Are you wearing running shoes?");
     switch (footwear.toLowerCase()) {
@@ -71,44 +69,29 @@ if (age >= 21) {
           default:
           console.log("User entry invalid")
           alert("You need to answer yes or no. Let's try this again.")
-            // !!!!!!!!FIGURE OUT HOW TO REPEAT QUESTION
-            // !!!!!!!!FIGURE OUT HOW TO REPEAT QUESTION
-            // !!!!!!!!FIGURE OUT HOW TO REPEAT QUESTION
-            // !!!!!!!!FIGURE OUT HOW TO REPEAT QUESTION
-            // !!!!!!!!FIGURE OUT HOW TO REPEAT QUESTION
-            // !!!!!!!!FIGURE OUT HOW TO REPEAT QUESTION
+
         }
       break;
     case "no":
       console.log("User has no running shoes")
       alert("You need running shoes to cross the bridge. Maybe you should try swimming?")
-            // !!!!!!!!!!FIGURE OUT HOW TO START OVER
-            // !!!!!!!!!!FIGURE OUT HOW TO START OVER
-            // !!!!!!!!!!FIGURE OUT HOW TO START OVER
-            // !!!!!!!!!!FIGURE OUT HOW TO START OVER
-            // !!!!!!!!!!FIGURE OUT HOW TO START OVER
-            // !!!!!!!!!!FIGURE OUT HOW TO START OVER
-            // !!!!!!!!!!FIGURE OUT HOW TO START OVER
-            // !!!!!!!!!!FIGURE OUT HOW TO START OVER
+    riverPrompt()
         break;
     default:
     console.log("User entry invalid")
     alert("You need to answer yes or no. Let's try this again.")
-      // !!!!!!!!FIGURE OUT HOW TO REPEAT QUESTION
-      // !!!!!!!!FIGURE OUT HOW TO REPEAT QUESTION
-      // !!!!!!!!FIGURE OUT HOW TO REPEAT QUESTION
-      // !!!!!!!!FIGURE OUT HOW TO REPEAT QUESTION
-      // !!!!!!!!FIGURE OUT HOW TO REPEAT QUESTION
-      // !!!!!!!!FIGURE OUT HOW TO REPEAT QUESTION
+    footwearPrompt();
     }
+  }
+  footwearPrompt();
   }
 
   else {
-    while(river.toLowerCase() === undefined) {
-
-    prompt("I'm not sure what you mean. Let's try this again. Do you want to A) 'swim across the river' or B) 'walk across the bridge'?'");
-    }
+    alert("Hmmmm. Let's try that again. Please choose 'a' or 'b'")
+    riverPrompt()
   }
+  }
+  riverPrompt();
 }
 
 else {
