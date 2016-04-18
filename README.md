@@ -5,6 +5,12 @@ A text based adventure game using Javascript
 * Incorporate score keeping ability
 * Add CSS and images to move the game into the DOM
 
+----------------------------------
+
+This project was created to fulfill an assignment for The Iron Yard Charleston's Front-End Engineering course. The original assignment text is below:
+
+----------------------------------
+
 *Week 2, Day 3*
 
 ##Choose Your Own Adventure
